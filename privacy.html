@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Nine Bar</title>
+<meta name="description" content="Privacy Policy for Nine Bar, an espresso journal for home baristas by TapLabs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#e7e2d4; --bg2:#ede8db; --surface:#f7f4ec; --surface2:#efe9da; --line:rgba(43,42,37,.12);
+    --accent:#a97d3d; --accent2:#5c6b4e; --ink:#2b2a25; --inkdim:#6b6858;
+    --display:'Space Grotesk',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg1);font-family:var(--body);color:var(--ink);}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:12px;}
+  h1,h2,h3{font-family:var(--display);}
+  .btn-primary{display:inline-block;background:var(--accent);color:#211705;border:none;font-family:var(--body);font-weight:600;font-size:14px;padding:13px 24px;border-radius:12px;cursor:pointer;text-decoration:none;}
+  .btn-ghost{display:inline-block;background:transparent;color:var(--ink);border:1px solid var(--line);font-family:var(--body);font-weight:500;font-size:14px;padding:12px 22px;border-radius:12px;text-decoration:none;}
+  .mono{font-family:var(--mono);}
+
+  /* ---- header (shared with index.html) ---- */
+  header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(231,226,212,.92);backdrop-filter:blur(8px);z-index:20;}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+  .tap-logo{font-family:var(--mono);font-size:12px;color:var(--inkdim);text-decoration:none;letter-spacing:.02em;}
+  .brand-lockup{display:flex;align-items:center;gap:9px;}
+  .brand-word{font-family:var(--display);font-weight:700;font-size:16px;}
+  nav.links{display:flex;gap:26px;font-size:13.5px;color:var(--inkdim);}
+  nav.links a{text-decoration:none;}
+  nav.links a:hover{color:var(--ink);}
+  @media (max-width:760px){ nav.links{display:none;} }
+
+  /* ---- policy hero ---- */
+  .policy-hero{padding:64px 0 40px;}
+  .policy-hero .eyebrow{display:inline-block;background:rgba(92,107,78,.10);border:1px solid rgba(92,107,78,.25);padding:6px 14px;border-radius:999px;margin-bottom:22px;}
+  .policy-hero h1{font-weight:700;font-size:clamp(36px,5vw,56px);line-height:1.05;letter-spacing:-.01em;margin-bottom:18px;max-width:700px;}
+  .policy-hero .lead{max-width:640px;font-size:16px;line-height:1.65;color:var(--inkdim);}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .pill{font-family:var(--mono);font-size:12px;background:var(--surface);border:1px solid var(--line);padding:8px 16px;border-radius:999px;color:var(--inkdim);}
+
+  /* ---- policy layout ---- */
+  .policy-wrap{padding:0 0 80px;}
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:24px;align-items:start;}
+  @media (max-width:900px){ .layout{grid-template-columns:1fr;} }
+
+  .toc{position:sticky;top:88px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;}
+  .toc h2{font-size:13px;font-weight:600;margin-bottom:14px;color:var(--ink);letter-spacing:-.01em;}
+  .toc a{display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;color:var(--inkdim);text-decoration:none;}
+  .toc a:hover{background:var(--surface2);color:var(--ink);}
+  @media (max-width:900px){ .toc{position:static;} }
+
+  .policy-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:32px;}
+  .policy-item{padding:8px 0 26px;border-bottom:1px solid var(--line);scroll-margin-top:96px;}
+  .policy-item:last-child{border-bottom:none;padding-bottom:0;}
+  .policy-item h2{font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:12px;color:var(--ink);}
+  .policy-item p,.policy-item li{color:var(--inkdim);line-height:1.75;font-size:14.5px;}
+  .policy-item p{margin:0 0 12px;}
+  .policy-item ul{margin:0;padding-left:20px;}
+  .policy-item li+li{margin-top:8px;}
+  .policy-item a{color:var(--accent2);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
+
+  .note{margin-top:16px;padding:16px 18px;border-radius:14px;background:rgba(169,125,61,.08);border:1px solid rgba(169,125,61,.22);color:var(--inkdim);font-size:13.5px;line-height:1.6;}
+  .note strong{color:var(--ink);}
+
+  .contact-panel{margin-top:14px;padding:18px 20px;border-radius:14px;background:var(--surface2);border:1px solid var(--line);}
+  .contact-panel p{margin:0;font-size:14.5px;color:var(--inkdim);line-height:1.8;}
+  .contact-panel a{color:var(--accent2);font-weight:600;}
+
+  code{padding:.15rem .35rem;border-radius:6px;background:var(--surface2);color:var(--ink);font-family:var(--mono);font-size:.9em;}
+
+  /* ---- footer (shared with index.html) ---- */
+  footer{padding:36px 0;border-top:1px solid var(--line);}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  footer .fleft{font-size:12.5px;color:var(--inkdim);}
+  footer .flinks{display:flex;gap:20px;font-size:12.5px;color:var(--inkdim);}
+  footer .flinks a{text-decoration:none;}
+  footer .flinks a:hover{color:var(--ink);}
+
+  @media (max-width:760px){
+    .policy-card{padding:22px;}
+    .toc{padding:18px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="tap-logo" href="https://www.taplabs.cloud/" target="_blank">taplabs</a>
+    <div class="brand-lockup">
+      <svg width="18" height="19" viewBox="0 0 200 210"><text x="100" y="150" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="168" fill="var(--accent)">9</text><rect x="44" y="168" width="112" height="16" rx="8" fill="var(--accent2)"/></svg>
+      <span class="brand-word">Nine Bar</span>
+    </div>
+    <nav class="links">
+      <a href="index.html">Nine Bar</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="policy-hero">
+  <div class="wrap">
+    <span class="eyebrow">Privacy & data handling</span>
+    <h1>Privacy Policy</h1>
+    <p class="lead">Nine Bar is a personal coffee journal for beans, dial-in history, and every drink you make. This page explains what information may be collected, how it may be used, and the choices available to you.</p>
+    <div class="meta">
+      <span class="pill">Effective date: August 24, 2026</span>
+      <span class="pill">Applies to: Nine Bar mobile app and website</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLICY ============ -->
+<section class="policy-wrap" id="policy">
+  <div class="wrap">
+    <div class="layout">
+      <aside class="toc" aria-label="Table of contents">
+        <h2>On this page</h2>
+        <a href="#intro">1. Introduction</a>
+        <a href="#collect">2. Information We Collect</a>
+        <a href="#use">3. How We Use Information</a>
+        <a href="#share">4. Third-Party Services</a>
+        <a href="#retain">5. Data Retention</a>
+        <a href="#choices">6. Your Choices</a>
+        <a href="#deletion">7. Data Deletion Requests</a>
+        <a href="#children">8. Children's Privacy</a>
+        <a href="#security">9. Security</a>
+        <a href="#changes">10. Changes to This Policy</a>
+        <a href="#contact">11. Contact Us</a>
+      </aside>
+
+      <article class="policy-card">
+
+        <section class="policy-item" id="intro">
+          <h2>1. Introduction</h2>
+          <p>Nine Bar ("we," "our," or "us") respects your privacy. This Privacy Policy explains how information is handled when you use the Nine Bar mobile application and website.</p>
+          <p>Nine Bar is a personal journal for tracking coffee beans, brewing history, and recipes. It is designed to work fully offline, with no account required for core use.</p>
+        </section>
+
+        <section class="policy-item" id="collect">
+          <h2>2. Information We Collect</h2>
+          <p>We aim to keep data collection limited and purposeful. Depending on how you use Nine Bar, we may collect:</p>
+          <ul>
+            <li><strong>User-entered content</strong>, such as beans, pulls (shot logs), recipes, equipment profiles, and any notes or ratings you add.</li>
+            <li><strong>Optional photos</strong>, if you choose to attach a photo to a bean.</li>
+            <li><strong>Account information</strong>, such as an email address or an Apple or Google account identifier, only if you choose to create an account.</li>
+            <li><strong>Usage and diagnostic data</strong>, such as app interactions, crash information, and performance data.</li>
+            <li><strong>Device information</strong>, such as device type, operating system version, language, and app version.</li>
+          </ul>
+          <div class="note">
+            <strong>Note:</strong> Nine Bar does not require account creation to use the core app. Your beans, pulls, and recipes stay on your device unless you choose to create an account for cross-device sync.
+          </div>
+        </section>
+
+        <section class="policy-item" id="use">
+          <h2>3. How We Use Information</h2>
+          <p>We may use collected information to:</p>
+          <ul>
+            <li>Store and display your beans, pulls, recipes, and equipment profiles within the app.</li>
+            <li>Sync your data across your devices, if you create an account and enable sync.</li>
+            <li>Improve app performance, reliability, and usability.</li>
+            <li>Monitor service health, troubleshoot issues, and help prevent misuse of optional account features.</li>
+            <li>Process subscription or one-time purchase payments through the App Store, where applicable.</li>
+          </ul>
+        </section>
+
+        <section class="policy-item" id="share">
+          <h2>4. Third-Party Services</h2>
+          <p>Nine Bar uses a limited set of third-party services to support optional account features and app functionality. These may include:</p>
+          <ul>
+            <li>Firebase (Google), for optional account authentication, cloud data sync, and photo storage.</li>
+            <li>Apple's App Store, to process subscription and one-time purchase payments.</li>
+            <li>Basic analytics or crash-reporting tools, to help us fix bugs and improve reliability.</li>
+          </ul>
+          <p>Nine Bar does not use advertising networks or advertising identifiers of any kind. Third-party services may collect or process certain information in accordance with their own privacy policies. We do not control the data practices of third-party providers.</p>
+        </section>
+
+        <section class="policy-item" id="retain">
+          <h2>5. Data Retention</h2>
+          <p>Beans, pulls, recipes, and equipment profiles you create are stored on your device by default. If you create an account and enable sync, this same data is also stored in our cloud database for as long as your account remains active.</p>
+          <p>If you delete your account, associated cloud-synced data is deleted within a reasonable timeframe. Data stored only on your device is removed when you delete the app.</p>
+        </section>
+
+        <section class="policy-item" id="choices">
+          <h2>6. Your Choices</h2>
+          <p>You can manage your privacy in several ways:</p>
+          <ul>
+            <li>Use Nine Bar without creating an account — all core features remain available.</li>
+            <li>Choose not to attach photos or notes to beans and pulls.</li>
+            <li>Delete individual beans, pulls, recipes, or equipment profiles at any time within the app.</li>
+            <li>Request deletion of your account and associated cloud data by contacting us.</li>
+          </ul>
+        </section>
+
+        <section class="policy-item" id="deletion">
+          <h2>7. Data Deletion Requests</h2>
+          <p>If you would like to request deletion of your account or synced data, please contact us using the information below. We will review and process requests within a reasonable timeframe.</p>
+          <p>Include enough detail for us to identify your account, such as the email address used to sign in.</p>
+        </section>
+
+        <section class="policy-item" id="children">
+          <h2>8. Children's Privacy</h2>
+          <p>Nine Bar is not intended for children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through the app, please contact us so we can review and remove it where appropriate.</p>
+        </section>
+
+        <section class="policy-item" id="security">
+          <h2>9. Security</h2>
+          <p>We use reasonable administrative, technical, and organizational measures to help protect information. However, no method of transmission over the internet or method of electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+        </section>
+
+        <section class="policy-item" id="changes">
+          <h2>10. Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time. Any updates will be posted on this page, and the effective date above will be revised when changes are made.</p>
+        </section>
+
+        <section class="policy-item" id="contact">
+          <h2>11. Contact Us</h2>
+          <p>If you have questions about this Privacy Policy or would like to make a privacy-related request, contact:</p>
+          <div class="contact-panel">
+            <p>
+              <strong>Email:</strong> <a href="mailto:support@taplabs.cloud">support@taplabs.cloud</a><br>
+              <strong>Website:</strong> <a href="https://www.ninebarapp.com">ninebarapp.com</a>
+            </p>
+          </div>
+        </section>
+
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fleft">© <span id="year"></span> taplabs. Nine Bar — find your nine, then repeat it.</div>
+    <div class="flinks">
+      <a href="https://www.taplabs.cloud/">taplabs</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="index.html">Back to Nine Bar</a>
+      <a href="mailto:support@taplabs.cloud">Support</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

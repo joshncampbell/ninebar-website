@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use — Nine Bar</title>
+<meta name="description" content="Terms of Use for Nine Bar, an espresso journal for home baristas by TapLabs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#e7e2d4; --bg2:#ede8db; --surface:#f7f4ec; --surface2:#efe9da; --line:rgba(43,42,37,.12);
+    --accent:#a97d3d; --accent2:#5c6b4e; --ink:#2b2a25; --inkdim:#6b6858;
+    --display:'Space Grotesk',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg1);font-family:var(--body);color:var(--ink);}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:12px;}
+  h1,h2,h3{font-family:var(--display);}
+  .btn-primary{display:inline-block;background:var(--accent);color:#211705;border:none;font-family:var(--body);font-weight:600;font-size:14px;padding:13px 24px;border-radius:12px;cursor:pointer;text-decoration:none;}
+  .btn-ghost{display:inline-block;background:transparent;color:var(--ink);border:1px solid var(--line);font-family:var(--body);font-weight:500;font-size:14px;padding:12px 22px;border-radius:12px;text-decoration:none;}
+  .mono{font-family:var(--mono);}
+
+  /* ---- header (shared with index.html) ---- */
+  header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(231,226,212,.92);backdrop-filter:blur(8px);z-index:20;}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+  .tap-logo{font-family:var(--mono);font-size:12px;color:var(--inkdim);text-decoration:none;letter-spacing:.02em;}
+  .brand-lockup{display:flex;align-items:center;gap:9px;}
+  .brand-word{font-family:var(--display);font-weight:700;font-size:16px;}
+  nav.links{display:flex;gap:26px;font-size:13.5px;color:var(--inkdim);}
+  nav.links a{text-decoration:none;}
+  nav.links a:hover{color:var(--ink);}
+  @media (max-width:760px){ nav.links{display:none;} }
+
+  /* ---- policy hero ---- */
+  .policy-hero{padding:64px 0 40px;}
+  .policy-hero .eyebrow{display:inline-block;background:rgba(92,107,78,.10);border:1px solid rgba(92,107,78,.25);padding:6px 14px;border-radius:999px;margin-bottom:22px;}
+  .policy-hero h1{font-weight:700;font-size:clamp(36px,5vw,56px);line-height:1.05;letter-spacing:-.01em;margin-bottom:18px;max-width:700px;}
+  .policy-hero .lead{max-width:640px;font-size:16px;line-height:1.65;color:var(--inkdim);}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .pill{font-family:var(--mono);font-size:12px;background:var(--surface);border:1px solid var(--line);padding:8px 16px;border-radius:999px;color:var(--inkdim);}
+
+  /* ---- policy layout ---- */
+  .policy-wrap{padding:0 0 80px;}
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:24px;align-items:start;}
+  @media (max-width:900px){ .layout{grid-template-columns:1fr;} }
+
+  .toc{position:sticky;top:88px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;}
+  .toc h2{font-size:13px;font-weight:600;margin-bottom:14px;color:var(--ink);letter-spacing:-.01em;}
+  .toc a{display:block;padding:9px 10px;border-radius:10px;font-size:13.5px;color:var(--inkdim);text-decoration:none;}
+  .toc a:hover{background:var(--surface2);color:var(--ink);}
+  @media (max-width:900px){ .toc{position:static;} }
+
+  .policy-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:32px;}
+  .policy-item{padding:8px 0 26px;border-bottom:1px solid var(--line);scroll-margin-top:96px;}
+  .policy-item:last-child{border-bottom:none;padding-bottom:0;}
+  .policy-item h2{font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:12px;color:var(--ink);}
+  .policy-item p,.policy-item li{color:var(--inkdim);line-height:1.75;font-size:14.5px;}
+  .policy-item p{margin:0 0 12px;}
+  .policy-item ul{margin:0;padding-left:20px;}
+  .policy-item li+li{margin-top:8px;}
+  .policy-item a{color:var(--accent2);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
+
+  .note{margin-top:16px;padding:16px 18px;border-radius:14px;background:rgba(169,125,61,.08);border:1px solid rgba(169,125,61,.22);color:var(--inkdim);font-size:13.5px;line-height:1.6;}
+  .note strong{color:var(--ink);}
+
+  .contact-panel{margin-top:14px;padding:18px 20px;border-radius:14px;background:var(--surface2);border:1px solid var(--line);}
+  .contact-panel p{margin:0;font-size:14.5px;color:var(--inkdim);line-height:1.8;}
+  .contact-panel a{color:var(--accent2);font-weight:600;}
+
+  code{padding:.15rem .35rem;border-radius:6px;background:var(--surface2);color:var(--ink);font-family:var(--mono);font-size:.9em;}
+
+  /* ---- footer (shared with index.html) ---- */
+  footer{padding:36px 0;border-top:1px solid var(--line);}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  footer .fleft{font-size:12.5px;color:var(--inkdim);}
+  footer .flinks{display:flex;gap:20px;font-size:12.5px;color:var(--inkdim);}
+  footer .flinks a{text-decoration:none;}
+  footer .flinks a:hover{color:var(--ink);}
+
+  @media (max-width:760px){
+    .policy-card{padding:22px;}
+    .toc{padding:18px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="tap-logo" href="https://www.taplabs.cloud/" target="_blank">taplabs</a>
+    <div class="brand-lockup">
+      <svg width="18" height="19" viewBox="0 0 200 210"><text x="100" y="150" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="168" fill="var(--accent)">9</text><rect x="44" y="168" width="112" height="16" rx="8" fill="var(--accent2)"/></svg>
+      <span class="brand-word">Nine Bar</span>
+    </div>
+    <nav class="links">
+      <a href="index.html">Nine Bar</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="policy-hero">
+  <div class="wrap">
+    <span class="eyebrow">Terms & conditions</span>
+    <h1>Terms of Use</h1>
+    <p class="lead">These Terms of Use govern your use of Nine Bar. By using the app, you agree to these terms, including subscription terms, usage guidelines, and limitations.</p>
+    <div class="meta">
+      <span class="pill">Effective date: August 24, 2026</span>
+      <span class="pill">Applies to: Nine Bar mobile app and website</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TERMS ============ -->
+<section class="policy-wrap" id="terms">
+  <div class="wrap">
+    <div class="layout">
+      <aside class="toc" aria-label="Table of contents">
+        <h2>On this page</h2>
+        <a href="#overview">1. Overview</a>
+        <a href="#subscription">2. Subscription</a>
+        <a href="#license">3. License Agreement</a>
+        <a href="#responsibilities">4. User Responsibilities</a>
+        <a href="#info">5. Informational Use</a>
+        <a href="#liability">6. Limitation of Liability</a>
+        <a href="#ads">7. No Advertising</a>
+        <a href="#changes">8. Changes</a>
+        <a href="#contact">9. Contact</a>
+      </aside>
+
+      <article class="policy-card">
+
+        <section class="policy-item" id="overview">
+          <h2>1. Overview</h2>
+          <p>Nine Bar is a mobile application for tracking coffee beans, dial-in history, and brewing recipes. By using the app, you agree to these Terms of Use.</p>
+        </section>
+
+        <section class="policy-item" id="subscription">
+          <h2>2. Subscription</h2>
+          <p>Nine Bar offers an optional auto-renewable subscription, and a one-time purchase alternative, under the name Nine Bar Pro. Pro unlocks cross-device sync, unlimited equipment profiles, trend charts, data export, and other features noted in the app.</p>
+          <ul>
+            <li>Payment will be charged to your Apple ID account at confirmation of purchase.</li>
+            <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period.</li>
+            <li>Your account will be charged for renewal within 24 hours prior to the end of the current period.</li>
+            <li>You can manage and cancel subscriptions in your App Store account settings.</li>
+            <li>The one-time Nine Bar Pro purchase is a single payment and does not renew.</li>
+          </ul>
+        </section>
+
+        <section class="policy-item" id="license">
+          <h2>3. License Agreement</h2>
+          <p>This app is licensed, not sold, to you. Your use of the app is subject to Apple's Standard End User License Agreement.</p>
+          <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">View Apple Standard EULA</a></p>
+        </section>
+
+        <section class="policy-item" id="responsibilities">
+          <h2>4. User Responsibilities</h2>
+          <ul>
+            <li>Use the app lawfully.</li>
+            <li>Do not misuse or attempt to disrupt the service, including optional account and sync features.</li>
+            <li>Do not attempt to circumvent subscription or purchase requirements.</li>
+          </ul>
+        </section>
+
+        <section class="policy-item" id="info">
+          <h2>5. Informational Use</h2>
+          <p>Nine Bar provides brewing suggestions, ratio calculations, and reference information, including the coffee-to-water ratio calculator, for general informational purposes. Actual results depend on your equipment, technique, ingredients, and personal taste, and are not guaranteed.</p>
+        </section>
+
+        <section class="policy-item" id="liability">
+          <h2>6. Limitation of Liability</h2>
+          <p>Nine Bar is not responsible for any damages or losses resulting from use of the app, including but not limited to data loss, equipment issues, or brewing outcomes. Use is at your own risk.</p>
+        </section>
+
+        <section class="policy-item" id="ads">
+          <h2>7. No Advertising</h2>
+          <p>Nine Bar does not display third-party advertisements. The free version of the app is fully functional without ads, and optional Nine Bar Pro features are described in Section 2 above.</p>
+        </section>
+
+        <section class="policy-item" id="changes">
+          <h2>8. Changes</h2>
+          <p>These terms may be updated from time to time. Continued use of the app constitutes acceptance of any updates.</p>
+        </section>
+
+        <section class="policy-item" id="contact">
+          <h2>9. Contact</h2>
+          <div class="contact-panel">
+            <p>
+              <strong>Email:</strong> <a href="mailto:support@taplabs.cloud">support@taplabs.cloud</a><br>
+              <strong>Website:</strong> <a href="https://www.ninebarapp.com">ninebarapp.com</a>
+            </p>
+          </div>
+        </section>
+
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fleft">© <span id="year"></span> taplabs. Nine Bar — find your nine, then repeat it.</div>
+    <div class="flinks">
+      <a href="https://www.taplabs.cloud/">taplabs</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="index.html">Back to Nine Bar</a>
+      <a href="mailto:support@taplabs.cloud">Support</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
