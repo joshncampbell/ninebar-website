@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's New in Nine Bar 1.1</title>
+<meta name="description" content="Nine Bar 1.1 brings smarter bean tracking, richer brew logging, easier equipment setup, and Nine Bar Pro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#e7e2d4;--bg2:#ede8db;--surface:#f7f4ec;--surface2:#efe9da;--line:rgba(43,42,37,.12);
+    --accent:#a97d3d;--accent2:#5c6b4e;--ink:#2b2a25;--inkdim:#6b6858;
+    --display:'Space Grotesk',sans-serif;--body:'Inter',sans-serif;--mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg1);font-family:var(--body);color:var(--ink);}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  section{padding:84px 0;}
+  h1,h2,h3{font-family:var(--display);}
+  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:12px;}
+  .btn-primary,.btn-ghost{display:inline-block;border-radius:12px;padding:13px 24px;font-size:14px;text-decoration:none;}
+  .btn-primary{background:var(--accent);color:#211705;font-weight:600;}
+  .btn-ghost{border:1px solid var(--line);font-weight:500;}
+
+  header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(231,226,212,.92);backdrop-filter:blur(8px);z-index:20;}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+  .tap-logo{font-family:var(--mono);font-size:12px;color:var(--inkdim);text-decoration:none;letter-spacing:.02em;}
+  .brand-lockup{display:flex;align-items:center;gap:9px;text-decoration:none;}
+  .brand-word{font-family:var(--display);font-weight:700;font-size:16px;}
+  nav.links{display:flex;gap:24px;font-size:13.5px;color:var(--inkdim);}
+  nav.links a{text-decoration:none;}
+  nav.links a:hover,nav.links a[aria-current="page"]{color:var(--ink);}
+  @media(max-width:760px){nav.links{display:none;}}
+
+  .hero{text-align:center;padding:76px 0 0;overflow:hidden;}
+  .hero .eyebrow{display:inline-block;background:rgba(92,107,78,.10);border:1px solid rgba(92,107,78,.25);padding:7px 15px;border-radius:999px;margin:0 auto 22px;}
+  .hero h1{font-size:48px;line-height:1.06;letter-spacing:-.02em;max-width:760px;margin:0 auto;}
+  .hero .lead{max-width:650px;margin:20px auto 0;color:var(--inkdim);font-size:16px;line-height:1.65;}
+  .hero-ctas{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:30px;}
+  .shot-stage{height:570px;position:relative;max-width:900px;margin:48px auto 0;}
+  .shot{position:absolute;width:260px;filter:drop-shadow(0 26px 25px rgba(43,34,20,.18));}
+  .shot.left{left:13%;top:74px;transform:rotate(-5deg);}
+  .shot.center{left:50%;top:0;transform:translateX(-50%);z-index:2;width:284px;}
+  .shot.right{right:13%;top:74px;transform:rotate(5deg);}
+  @media(max-width:760px){
+    .hero{padding-top:56px;}.hero h1{font-size:38px;}.shot-stage{height:470px;margin-top:38px;}.shot{width:210px}.shot.center{width:230px}.shot.left{left:-4%;top:70px}.shot.right{right:-4%;top:70px}
+  }
+  @media(max-width:480px){.shot-stage{height:430px}.shot{width:180px}.shot.center{width:210px}.shot.left{left:-20%}.shot.right{right:-20%}}
+
+  .at-a-glance{background:var(--surface2);}
+  .section-head{text-align:center;max-width:650px;margin:0 auto 42px;}
+  .section-head h2{font-size:30px;line-height:1.25;}
+  .section-head p{color:var(--inkdim);font-size:15px;line-height:1.65;margin-top:14px;}
+  .highlight-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;}
+  .card .marker{width:36px;height:36px;border-radius:9px;background:var(--surface2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-family:var(--mono);font-size:10.5px;color:var(--accent2);}
+  .card h3{font-size:15.5px;margin-bottom:8px;}
+  .card p{font-size:13px;line-height:1.6;color:var(--inkdim);}
+  @media(max-width:900px){.highlight-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.highlight-grid{grid-template-columns:1fr;}}
+
+  .release-section{border-bottom:1px solid var(--line);}
+  .release-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,430px);gap:72px;align-items:center;}
+  .release-section.reverse .release-copy{order:2;}
+  .release-section.reverse .release-visual{order:1;}
+  .release-copy h2{font-size:32px;line-height:1.25;margin-bottom:14px;}
+  .release-copy>.intro{color:var(--inkdim);font-size:15px;line-height:1.65;margin-bottom:26px;}
+  .change-list{list-style:none;display:grid;gap:18px;}
+  .change-list li{position:relative;padding-left:24px;font-size:14px;line-height:1.6;color:var(--inkdim);}
+  .change-list li::before{content:'';position:absolute;left:0;top:.58em;width:8px;height:8px;border-radius:50%;background:var(--accent);}
+  .change-list strong{color:var(--ink);font-weight:600;}
+  .release-visual{text-align:center;}
+  .release-visual img{display:block;width:100%;max-width:360px;margin:0 auto;filter:drop-shadow(0 25px 24px rgba(43,34,20,.17));}
+  .paired-shots{display:flex;justify-content:center;align-items:flex-start;margin:0 -32px;}
+  .paired-shots img{width:56%;max-width:280px;}
+  .paired-shots img+img{margin-left:-50px;margin-top:60px;}
+  @media(max-width:820px){
+    section{padding:68px 0}.release-layout{grid-template-columns:1fr;gap:42px}.release-section.reverse .release-copy,.release-section.reverse .release-visual{order:initial}.release-visual img{max-width:300px}.paired-shots{margin:0}.paired-shots img{max-width:240px}
+  }
+
+  .details-band{background:var(--surface2);}
+  .details-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .detail-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;}
+  .detail-card h2{font-size:22px;margin-bottom:10px;}
+  .detail-card>.intro{color:var(--inkdim);font-size:14px;line-height:1.6;margin-bottom:22px;}
+  @media(max-width:760px){.details-grid{grid-template-columns:1fr;}}
+
+  .pro{background:var(--bg1);}
+  .limit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0;}
+  .limit{border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:18px;}
+  .limit .value{font-family:var(--display);font-size:26px;font-weight:700;color:var(--accent);}
+  .limit .label{font-size:12px;color:var(--inkdim);margin-top:3px;line-height:1.4;}
+  @media(max-width:460px){.limit-grid{grid-template-columns:1fr;}}
+
+  .polish{padding:56px 0;background:var(--surface2);}
+  .polish-box{display:flex;gap:24px;justify-content:space-between;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;}
+  .polish-box h2{font-size:20px;margin-bottom:8px;}
+  .polish-box p{font-size:13.5px;color:var(--inkdim);line-height:1.6;max-width:700px;}
+  .version-mark{font-family:var(--mono);font-size:11px;color:var(--accent2);background:var(--surface2);border-radius:999px;padding:8px 14px;white-space:nowrap;}
+  @media(max-width:620px){.polish-box{align-items:flex-start;flex-direction:column;}}
+
+  .download{text-align:center;}
+  .download h2{font-size:32px;max-width:580px;margin:0 auto;line-height:1.25;}
+  .download p{max-width:520px;margin:14px auto 28px;color:var(--inkdim);font-size:14.5px;line-height:1.65;}
+  footer{padding:36px 0;border-top:1px solid var(--line);}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  footer .fleft,footer .flinks{font-size:12.5px;color:var(--inkdim);}
+  footer .flinks{display:flex;gap:20px;flex-wrap:wrap;}
+  footer a{text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="tap-logo" href="https://www.taplabs.cloud/" target="_blank" rel="noopener">taplabs</a>
+    <a class="brand-lockup" href="index.html" aria-label="Nine Bar home">
+      <svg width="18" height="19" viewBox="0 0 200 210" aria-hidden="true"><text x="100" y="150" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="168" fill="var(--accent)">9</text><rect x="44" y="168" width="112" height="16" rx="8" fill="var(--accent2)"/></svg>
+      <span class="brand-word">Nine Bar</span>
+    </a>
+    <nav class="links" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="whats-new.html" aria-current="page">What's New</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#calculator">Calculator</a>
+      <a href="index.html#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">What's New · Version 1.1</span>
+      <h1>A better journal for the coffee you actually make.</h1>
+      <p class="lead">Nine Bar 1.1 brings smarter bean tracking, richer brew logging, easier equipment setup, and the introduction of Nine Bar Pro.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="https://apps.apple.com/us/app/nine-bar/id6805054633" target="_blank" rel="noopener">Update on the App Store</a>
+        <a class="btn-ghost" href="index.html">Back to Nine Bar</a>
+      </div>
+      <div class="shot-stage" aria-label="Screens from Nine Bar 1.1">
+        <img class="shot left" src="whats-new-assets/beans.png" alt="The redesigned Beans list with search, sections, and freshness indicators">
+        <img class="shot center" src="whats-new-assets/home.png" alt="The redesigned Nine Bar Home screen with a unified Log Again card">
+        <img class="shot right" src="whats-new-assets/profile.png" alt="The Nine Bar Profile screen showing an active Nine Bar Pro membership">
+      </div>
+    </div>
+  </section>
+
+  <section class="at-a-glance">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Version 1.1 at a glance</span>
+        <h2>More context when you need it. Less friction when you don't.</h2>
+        <p>The biggest changes make it easier to understand your beans, find what you're looking for, and log the drink in front of you.</p>
+      </div>
+      <div class="highlight-grid">
+        <article class="card"><div class="marker">01</div><h3>Freshness at a glance</h3><p>See whether an In Stock bean is Resting, Peak, Good, or Past Peak.</p></article>
+        <article class="card"><div class="marker">02</div><h3>Find beans faster</h3><p>Search your library and filter by roast, process, status, rating, and freshness.</p></article>
+        <article class="card"><div class="marker">03</div><h3>Better brew logging</h3><p>Guided choices, better labels, and smarter handling for milk and iced drinks.</p></article>
+        <article class="card"><div class="marker">PRO</div><h3>Introducing Nine Bar Pro</h3><p>Remove bean and equipment limits and unlock the full Nine Bar experience.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="release-section" id="home">
+    <div class="wrap release-layout">
+      <div class="release-copy">
+        <div class="eyebrow">Home</div>
+        <h2>Your next brew starts with better context.</h2>
+        <p class="intro">The redesigned Home recap brings the bean, drink type, last-brewed context, and Log Again action together in one clear card.</p>
+        <ul class="change-list">
+          <li><strong>A unified Log Again card</strong> now shows the drink-type icon, Last Brewed label, bean name, and yesterday's stats as one cohesive unit.</li>
+          <li><strong>Drink-type labels</strong> now appear in today's logged-brews list, matching the recap card and Brews tab.</li>
+          <li>Nested-container styling and text clipping in the recap card have also been corrected.</li>
+        </ul>
+      </div>
+      <div class="release-visual"><img src="whats-new-assets/home.png" alt="Home screen with the new unified Log Again recap card"></div>
+    </div>
+  </section>
+
+  <section class="release-section reverse" id="beans">
+    <div class="wrap release-layout">
+      <div class="release-copy">
+        <div class="eyebrow">Beans</div>
+        <h2>Know what's ready—and find it faster.</h2>
+        <p class="intro">Beans are now organized around the way a real coffee shelf changes, with freshness, search, filtering, and clearer status at the center.</p>
+        <ul class="change-list">
+          <li><strong>Freshness tracking</strong> uses roast date and roast level to mark In Stock beans as Resting, Peak, Good, or Past Peak. Tap the status for the full ranges guide.</li>
+          <li><strong>Search and filters</strong> help you find beans by roaster, name, origin, region, or variety and narrow the list by roast level, process, status, rating, and freshness.</li>
+          <li><strong>In Stock, Wishlist, and Finished</strong> replace the old flat list, in the order most useful while brewing. The former Active label is now In Stock.</li>
+          <li><strong>Drinks You've Made</strong> summarizes the drinks actually brewed with each bean, most-brewed first and always derived from brew history.</li>
+          <li><strong>Better bean details</strong> add an optional roaster or purchase link that opens in an in-app browser.</li>
+          <li><strong>Quick Add Bean</strong> now asks for roast date instead of silently assuming today.</li>
+        </ul>
+      </div>
+      <div class="release-visual paired-shots">
+        <img src="whats-new-assets/beans.png" alt="Beans list organized into In Stock, Wishlist, and Finished sections">
+        <img src="whats-new-assets/bean-freshness.png" alt="Freshness explainer for a resting medium-roast coffee bean">
+      </div>
+    </div>
+  </section>
+
+  <section class="release-section" id="bean-details">
+    <div class="wrap release-layout">
+      <div class="release-copy">
+        <div class="eyebrow">Bean details</div>
+        <h2>Freshness belongs beside the facts.</h2>
+        <p class="intro">Roast level, process, roast date, remaining weight, and freshness now read as one useful story about the bag in front of you.</p>
+        <ul class="change-list">
+          <li>The freshness chip stays visible in the bean's main details and opens a clear explanation with the current status and the values used to calculate it.</li>
+          <li>Freshness is only shown for In Stock beans and never inferred from tasting notes or drink history.</li>
+        </ul>
+      </div>
+      <div class="release-visual"><img src="whats-new-assets/bean-details.png" alt="Bean detail screen with a Resting freshness status chip"></div>
+    </div>
+  </section>
+
+  <section class="details-band" id="more-changes">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">More in this release</span>
+        <h2>Thoughtful improvements across every brew.</h2>
+      </div>
+      <div class="details-grid">
+        <article class="detail-card">
+          <div class="eyebrow">Brews</div>
+          <h2>Richer logging, fewer dead ends.</h2>
+          <p class="intro">The brew flow now adapts more closely to what you're making and what is actually available to brew.</p>
+          <ul class="change-list">
+            <li><strong>Milk Type is now guided:</strong> Dairy, Oat, Almond, Soy, Coconut, Cashew, Macadamia, Pistachio, Pea, or Other. Dairy drills into fat content, while Other still allows free text.</li>
+            <li><strong>Iced drinks stay accurate:</strong> Milk Temp hides when Served Iced is selected, and any previous temperature is cleared.</li>
+            <li><strong>Drink-type labels</strong> now appear in the Brews list and brew detail screen.</li>
+            <li><strong>Smarter bean selection</strong> adds Quick Add from the picker, excludes Wishlist and Finished beans, and introduces search when more than eight In Stock beans are available.</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <div class="eyebrow">Equipment</div>
+          <h2>A clearer path to your setup.</h2>
+          <p class="intro">Equipment selection now starts with how you brew, then narrows to the equipment type you use.</p>
+          <ul class="change-list">
+            <li><strong>Brew Method → Equipment Type</strong> replaces the previous flat list of 15+ equipment types.</li>
+            <li><strong>Manual Espresso Maker and Hario Switch</strong> join the equipment types, with the correct pressure and basket fields when appropriate.</li>
+            <li><strong>Turkish and Vietnamese Phin</strong> now have real seed catalog entries.</li>
+            <li><strong>Single-option methods</strong> automatically choose their equipment type, removing a redundant tap.</li>
+            <li><strong>New equipment:</strong> OutIn Fino grinder plus OutIn Nano and OutIn Mino espresso machines.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="release-section reverse pro" id="pro">
+    <div class="wrap release-layout">
+      <div class="release-copy">
+        <div class="eyebrow">Nine Bar Pro</div>
+        <h2>Room for the journal you're building.</h2>
+        <p class="intro">Nine Bar remains free to start. Pro removes the free-tier limits and provides access to Nine Bar's paid capabilities.</p>
+        <div class="limit-grid" aria-label="Nine Bar free-tier limits">
+          <div class="limit"><div class="value">4</div><div class="label">tracked beans total, across all statuses</div></div>
+          <div class="limit"><div class="value">1</div><div class="label">grinder</div></div>
+          <div class="limit"><div class="value">2</div><div class="label">brew methods</div></div>
+        </div>
+        <ul class="change-list">
+          <li><strong>Pro removes all three limits</strong> and adds paid capabilities, including optional account creation for cross-device sync.</li>
+          <li><strong>Purchase and restore</strong> are built into the app using StoreKit 2 and real entitlements.</li>
+          <li><strong>A new Profile entry point</strong> keeps Pro membership and account status easy to understand.</li>
+        </ul>
+      </div>
+      <div class="release-visual"><img src="whats-new-assets/profile.png" alt="Profile screen showing Nine Bar Pro and on-device data status"></div>
+    </div>
+  </section>
+
+  <section class="polish">
+    <div class="wrap">
+      <div class="polish-box">
+        <div>
+          <h2>Polish throughout Nine Bar</h2>
+          <p>Version 1.1 also introduces a redesigned Beans tab icon and brings the updated Log Again presentation into a single, more consistent visual system.</p>
+        </div>
+        <span class="version-mark">VERSION 1.1</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="download">
+    <div class="wrap">
+      <span class="eyebrow">Nine Bar 1.1</span>
+      <h2>Your coffee journal just got better.</h2>
+      <p>Update Nine Bar on the App Store and bring more context to every bean, brew, and setup.</p>
+      <a class="btn-primary" href="https://apps.apple.com/us/app/nine-bar/id6805054633" target="_blank" rel="noopener">Update on the App Store</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fleft">© 2026 taplabs. Nine Bar — find your nine, then repeat it.</div>
+    <div class="flinks">
+      <a href="index.html">Nine Bar home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="mailto:support@taplabs.cloud">Support</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
