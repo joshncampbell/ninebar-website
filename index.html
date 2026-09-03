@@ -63,6 +63,18 @@
   .pill-row span{font-size:12.5px;background:var(--surface);border:1px solid var(--line);padding:8px 16px;border-radius:999px;color:var(--inkdim);}
   .overview .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 
+  /* ---- what's new ---- */
+  .whats-new{background:var(--surface2);text-align:center;}
+  .whats-new .eyebrow{display:inline-block;background:rgba(92,107,78,.10);border:1px solid rgba(92,107,78,.25);padding:6px 14px;border-radius:999px;}
+  .whats-new h2{font-size:28px;font-weight:600;max-width:660px;margin:0 auto;line-height:1.3;}
+  .whats-new .release-intro{max-width:610px;margin:16px auto 40px;color:var(--inkdim);font-size:15px;line-height:1.6;}
+  .release-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:left;}
+  .release-grid .feat-icon{font-family:var(--mono);font-size:11px;color:var(--accent2);font-weight:500;}
+  .release-link{display:inline-block;margin-top:30px;color:var(--accent2);font-size:14px;font-weight:600;text-decoration:none;}
+  .release-link:hover{text-decoration:underline;}
+  @media (max-width:900px){ .release-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .release-grid{grid-template-columns:1fr;} }
+
   /* ---- features ---- */
   .features{text-align:center;}
   .features h2{font-size:28px;font-weight:600;max-width:560px;margin:0 auto;line-height:1.3;}
@@ -163,6 +175,7 @@
       <span class="brand-word">Nine Bar</span>
     </div>
     <nav class="links">
+      <a href="#whats-new">What's New</a>
       <a href="#features">Features</a>
       <a href="#calculator">Calculator</a>
       <a href="#how-it-works">How it works</a>
@@ -219,6 +232,38 @@
       <a class="btn-primary" href="https://apps.apple.com/us/app/nine-bar/id6805054633" target="_blank">Download now on the App Store</a>
       <a class="btn-ghost" href="#faq">Read FAQ</a>
     </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S NEW ============ -->
+<section class="whats-new" id="whats-new">
+  <div class="wrap">
+    <span class="eyebrow">What's New · Version 1.1</span>
+    <h2>A better journal for the coffee you actually make.</h2>
+    <p class="release-intro">Smarter bean tracking, richer brew logging, easier equipment setup, and the introduction of Nine Bar Pro.</p>
+    <div class="release-grid">
+      <div class="feat-card">
+        <div class="feat-icon">01</div>
+        <h3>Freshness at a glance</h3>
+        <p>See whether an In Stock bean is Resting, Peak, Good, or Past Peak based on roast date and roast level.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">02</div>
+        <h3>Find beans faster</h3>
+        <p>Search your library and filter by roast level, process, status, rating, and freshness.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">03</div>
+        <h3>Better brew logging</h3>
+        <p>Guided milk selection, drink-type labels, smarter bean selection, and improved iced-drink handling.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">PRO</div>
+        <h3>Introducing Nine Bar Pro</h3>
+        <p>Remove bean and equipment limits and unlock the full Nine Bar experience.</p>
+      </div>
+    </div>
+    <a class="release-link" href="whats-new.html">See everything in version 1.1 →</a>
   </div>
 </section>
 
@@ -385,7 +430,7 @@
     </div>
     <div class="note-box">
       <div class="nb-title">A note on your data</div>
-      <p>Nine Bar works fully offline, with no account required. Your beans, pulls, and recipes stay on your device unless you choose to create an account for cross-device sync.</p>
+      <p>Nine Bar works fully offline, with no account required. Your data stays on your device by default. Nine Bar Pro users can optionally create an account to sync their journal across devices.</p>
     </div>
   </div>
 </section>
@@ -422,15 +467,15 @@
       </div>
       <div class="faq-item">
         <h3>Do I need an account to use it?</h3>
-        <p>No. Nine Bar works fully offline with no account required. Create one only if you want your beans, pulls, and recipes synced across devices.</p>
+        <p>No. Nine Bar works fully offline with no account required. Nine Bar Pro users can optionally create an account to sync their journal across devices.</p>
       </div>
       <div class="faq-item">
         <h3>How much does it cost?</h3>
-        <p>The core journal — bean library, pull logging, the drink glossary, and one free equipment profile per category — is free forever, with no ads. Nine Bar Pro is available as a subscription or a one-time purchase, for cross-device sync, trend charts, export, and unlimited equipment profiles.</p>
+        <p>The free tier lets you track up to 4 beans total across all statuses, 1 grinder, and 2 brew methods. Nine Bar Pro removes all three limits and unlocks paid capabilities, including optional cross-device sync. Pro is available as a subscription or a one-time purchase.</p>
       </div>
       <div class="faq-item">
         <h3>Does Nine Bar track me?</h3>
-        <p>No. Nine Bar doesn't track you or sell your data. Everything you log stays on your device by default, and only moves to the cloud if you create an account for sync.</p>
+        <p>No. Nine Bar doesn't track you or sell your data. Everything you log stays on your device by default, and Nine Bar Pro users can choose to create an account for cross-device sync.</p>
       </div>
     </div>
   </div>
@@ -442,7 +487,7 @@
     <div class="flinks">
       <a href="https://www.taplabs.cloud/">taplabs</a>
       <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Use</a>
+      <a href="terms.html">Terms of Service</a>
       <a href="mailto:support@taplabs.cloud">Support</a>
     </div>
   </div>
